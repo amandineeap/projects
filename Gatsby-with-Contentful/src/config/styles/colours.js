@@ -1,0 +1,8 @@
+export const BLACK = '#181818'
+export const BLACK_LINKS = '#2F2F2F'
+export const DARKGREY = '#464646'
+export const GREY = '#5d5d5d'
+export const LIGHTGREY = '#8c8c8c'
+export const SUPERLIGHTGREY = '#e8e8e8'
+export const WHITE = '#D1D1D1'
+export const WHITE_PURE = '#FFFFFF'

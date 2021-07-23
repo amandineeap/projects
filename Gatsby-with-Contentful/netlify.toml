@@ -1,0 +1,9 @@
+[context.develop.environment]
+  CONTENTFUL_SPACE_ID = "v1ba3xvk66xz"
+  CONTENTFUL_ACCESS_TOKEN = "haQG1WKu4DATB-t3c5UByd8AI-RiSQkmChOGej0Q3s8"
+  CONTENTFUL_ENVIRONMENT="development"
+
+[context.master.environment]
+  CONTENTFUL_SPACE_ID = "v1ba3xvk66xz"
+  CONTENTFUL_ACCESS_TOKEN = "haQG1WKu4DATB-t3c5UByd8AI-RiSQkmChOGej0Q3s8"
+  CONTENTFUL_ENVIRONMENT="master"
