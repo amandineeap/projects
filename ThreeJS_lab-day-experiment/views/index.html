@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <div id="app"></div>
+  <div id="explanation" class="visible">
+    Click on the orbs to see what thoughts people have posted, <br />or click the pencil icon at the top right to post your own thoughts.
+  </div>
+  <div id="postButtonContainer">
+      <a href="#" id="postButton">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+  </div>
+
+  <div id="showMessageModal" class="overlay hidden">
+    <div class="modal">
+
+      <div id="closeButtonContainer">
+          <a href="#" id="closeButton">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+      </div>
+
+      <ul id="slides" class="slides">
+        <div class="form-wrapper">
+          <input type="radio" name="radio-btn" id="slide-reply" />
+          <li class="slide-container">
+            <div class="slide">
+              <div style="width: 100%; padding: 0 200px;">
+                <input type="hidden" id="postId" />
+                <input type="text" placeholder="What's on your mind?" id="postInput" />
+              </div>
+            </div>
+            <div class="nav">
+              <label class="nav-label prev" id="reply-back">&#x2039;</label>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <script src="/public/js/Detector.js"></script>
+  <script src="/public/js/Boid.js"></script>
+  <script src="/dist/bundle.js"></script>
+{% endblock %}

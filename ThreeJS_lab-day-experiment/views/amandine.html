@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<style>
+  body {
+    font-family: Monospace;
+    background-color: #f0f0f0;
+    margin: 0px;
+    overflow: hidden;
+  }
+</style>
+
+<script src="/public/js/TrackballControls.js"></script>
+<script src="/public/js/Detector.js"></script>
+<script src="/public/js/Bird.js"></script>
+<script src="/public/js/Boid.js"></script>
+
+<script src="/dist/bundle.js"></script>
+
+{% endblock %}
+{% block body %}
+<div class="overlay"></div>
+
+<div class="modal" id="postModal">
+  <div class="content">
+    <div id="postMessage">
+      <h1>Post Message</h1>
+      <input id="messageInput" type="text" placeholder="Hello world" />
+      <button type="submit" id="postMessageButton">Post</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="viewModal">
+  <div class="content">
+    <div id="viewMessage">
+    </div>
+  </div>
+</div>
+{% endblock %}
