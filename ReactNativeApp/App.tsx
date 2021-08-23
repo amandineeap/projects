@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import Routes from './components/Routes';
 import BottomMenu from './components/BottomMenu'
 
-function App() {
+const App = () =>  {
   return (
     <NavigationContainer>
       {/* <Routes/> */}
