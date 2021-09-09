@@ -23,6 +23,10 @@ export default {
     Footer,
     // Hero,
   },
+
+  mounted() {
+    console.log(this.$apollo)
+  },
   data() {
     return {
       pages:[], // query result
@@ -38,6 +42,7 @@ export default {
         }
       }`
   }
+
 }
 </script>
 

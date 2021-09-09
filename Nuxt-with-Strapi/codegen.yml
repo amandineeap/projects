@@ -4,4 +4,4 @@ generates:
     plugins:
       - 'fragment-matcher'
     config:
-    # apolloClientVersion: 2
+    # apolloClientVersion: 3
