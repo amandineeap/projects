@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_components_single_images",
+  "info": {
+    "name": "Single Image",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

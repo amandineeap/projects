@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_components_quotes",
+  "info": {
+    "name": "Quote Block",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "attribution": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    }
+  }
+}

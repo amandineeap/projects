@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "classes",
+  "collectionName": "pages",
   "info": {
-    "name": "Classes",
+    "name": "Pages",
     "description": ""
   },
   "options": {
@@ -21,6 +21,14 @@
     },
     "slug": {
       "type": "string"
+    },
+    "pageZone": {
+      "type": "dynamiczone",
+      "components": [
+        "page-components.quote",
+        "page-components.single-image",
+        "page-components.text-block"
+      ]
     }
   }
 }
