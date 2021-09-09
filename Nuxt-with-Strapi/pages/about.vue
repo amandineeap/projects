@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import gql from 'graphql-tag'
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Hero from "@/components/Hero.vue"
