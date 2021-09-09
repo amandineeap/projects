@@ -41,7 +41,6 @@ Layouts are a great help when you want to change the look and feel of your Nuxt 
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
-
 ### `pages`
 
 This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
@@ -67,3 +66,59 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+## Nuxt Application pulling data from Strapi with GraphQL
+
+[https://strapi.io/blog/creating-strapi-dynamic-zone-in-nuxtjs-app](https://strapi.io/blog/creating-strapi-dynamic-zone-in-nuxtjs-app)
+
+Add the relevant packages `yarn add apollo-cache-inmemory graphql-tag graphql`
+
+Add this to `nuxt.config.js`
+
+```
+apollo: {
+  clientConfigs: {
+    default: '@/graphql/config/config.js'
+  }
+},
+```
+
+Allow GraphQL to work with dynamic zones (unions)
+
+Add package `yarn add @nuxtjs/apollo`
+
+`yarn add -D @graphql-codegen/cli @graphql-codegen/fragment-matcher`
+
+Create a `codegen.yml` file with the following:
+
+```
+schema: 'http://127.0.0.1:1337/graphql'
+generates:
+  ./fragmentTypes.json:
+    plugins:
+      - 'fragment-matcher'
+
+```
+
+Add a script to `package.json` for `"generate-graphql": "graphql-codegen"` and run this `yarn generate-graphql` command.
+
+And lastly create a `./graphql/config/config.js` file:
+
+```
+import {
+  InMemoryCache,
+  IntrospectionFragmentMatcher,
+} from 'apollo-cache-inmemory'
+import introspectionResult from '~/fragmentTypes.json'
+
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData: introspectionResult,
+})
+export default ({ req, app }) => {
+  return {
+    httpEndpoint: process.env.BACKEND_URL || 'http://localhost:1337/graphql',
+    cache: new InMemoryCache({ fragmentMatcher }),
+  }
+}
+
+```

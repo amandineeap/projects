@@ -1,0 +1,32 @@
+import gql from 'graphql-tag'
+
+// Main query to get page-specific content
+
+export const contentQuery = gql`
+  query Pages($Page: String!) {
+    pages: pages(where: { title: $Page }) {
+      id
+      title
+      description
+      pageZone {
+        ... on ComponentPageComponentsSingleImage {
+          id
+          image {
+            url
+          }
+        }
+        ... on ComponentPageComponentsQuote {
+          id
+          title
+          quote
+          attribution
+          source
+        }
+        ... on ComponentPageComponentsTextBlock {
+          id
+          textBlock
+        }
+      }
+    }
+  }
+`
