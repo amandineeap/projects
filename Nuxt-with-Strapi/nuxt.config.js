@@ -1,6 +1,11 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
+  env: {
+    STRAPI_URL: 'https://ad-strapi-cms.herokuapp.com/',
+  },
+
   apollo: {
     clientConfigs: {
       default: '@/graphql/config/config.js',

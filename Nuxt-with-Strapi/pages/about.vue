@@ -1,9 +1,8 @@
 <template>
   <div>
     <Header />
-    <p>{{ pages }}</p>
-   <!-- <Hero :title="title" :content="pages" />
-    <ContentGrid :title="title" :content="pages" /> -->
+    <Hero :title="title" :content="pages" />
+    <ContentGrid :title="title" :content="pages" /> 
     <Footer />
   </div>
 </template>
@@ -12,21 +11,22 @@
 import gql from 'graphql-tag'
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-// import Hero from "@/components/Hero.vue"
-// import ContentGrid from "@/components/ContentGrid"
-// import { contentQuery } from "~/graphql/queries/content"
+import Hero from "@/components/Hero.vue"
+import ContentGrid from "@/components/ContentGrid"
+import { pagesQuery } from "~/graphql/queries/content"
 
 export default {
   components: {
     Header,
-    // ContentGrid,
+    ContentGrid,
     Footer,
-    // Hero,
+    Hero,
   },
 
-  mounted() {
-    console.log(this.$apollo)
-  },
+  // To debug
+  // mounted() {
+  //   console.log(this.$apollo)
+  // },
   data() {
     return {
       pages:[], // query result
@@ -34,13 +34,15 @@ export default {
     };
   },
   apollo: {
-    pages: gql`
-      query Pages {
-        pages {
-          id
-          title
+    pages: {
+    query: pagesQuery,
+      variables () {
+        return {
+          Page: this.title
         }
-      }`
+      },
+      prefetch: true
+    }
   }
 
 }

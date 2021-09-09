@@ -1,21 +1,21 @@
 <template>
   <div class="hero">
     <div v-for="contents in content" :key="contents.id">
-      <p>what {{ contents.title }}</p>
+      <p>{{ contents.title }}</p>
       <div v-for="zone in contents.pageZone" :key="zone.id" class="project">
         <!-- Display all richText here -->
-        <div class="sub-text" v-if="zone.__typename === 'ComponentPageComponentsTextBlock'">
+        <div class="text-block sub-text" v-if="zone.__typename === 'ComponentPageComponentsTextBlock'">
           <p>{{ zone.textBlock }}</p>
         </div>
 
         <!-- Displays all Quotes here -->
-        <div v-if="zone.__typename === 'ComponentPageComponentsQuote'">
+        <div v-if="zone.__typename === 'ComponentPageComponentsQuote'" class="quote">
           <p class="subtitle">{{ zone.quote }}</p>
           <p class="sub-text">by {{ zone.title}}</p>
         </div>
 
         <!-- Displays all Images -->
-        <div class="sub-text" v-if="zone.__typename === 'ComponentPageComponentsSingleImage'">
+        <div class="images sub-text" v-if="zone.__typename === 'ComponentPageComponentsSingleImage'">
           <img :src="zone.image.url" />
         </div>
       </div>
@@ -32,12 +32,22 @@ export default {
 </script>
 
 <style scoped>
+.text-block{
+  background-color: orange;
+}
+.quote{
+  background-color: lightblue;
+}
+.images{
+  background-color: lightgreen;
+}
 .hero {
   text-align: center;
   width: 650px;
   max-width: 100%;
   margin: 0 auto;
   padding: 1rem 0 8rem 0;
+  border: 1px solid blue;
 }
 .sub-text {
   padding: 0 0 3rem 0;

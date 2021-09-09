@@ -71,6 +71,16 @@ More information about the usage of this directory in [the documentation](https:
 
 [https://strapi.io/blog/creating-strapi-dynamic-zone-in-nuxtjs-app](https://strapi.io/blog/creating-strapi-dynamic-zone-in-nuxtjs-app)
 
+Add package `yarn add @nuxtjs/apollo`
+And add the module to the `nuxt.config.js`
+
+```
+ buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+  ],
+```
+
 Add the relevant packages `yarn add apollo-cache-inmemory graphql-tag graphql`
 
 Add this to `nuxt.config.js`
@@ -84,8 +94,6 @@ apollo: {
 ```
 
 Allow GraphQL to work with dynamic zones (unions)
-
-Add package `yarn add @nuxtjs/apollo`
 
 `yarn add -D @graphql-codegen/cli @graphql-codegen/fragment-matcher`
 

@@ -2,9 +2,9 @@ import gql from 'graphql-tag'
 
 // Main query to get page-specific content
 
-export const contentQuery = gql`
+export const pagesQuery = gql`
   query Pages($Page: String!) {
-    pages: pages(where: { title: $Page }) {
+    pages(where: { title: $Page }) {
       id
       title
       description
