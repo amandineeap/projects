@@ -29,6 +29,13 @@
         "page-components.single-image",
         "page-components.text-block"
       ]
+    },
+    "color": {
+      "type": "colorpicker",
+      "columnType": "text"
+    },
+    "customDropdown": {
+      "type": "customDropdown"
     }
   }
 }

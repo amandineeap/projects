@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "custom-dropdown.index",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

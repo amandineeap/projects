@@ -24,9 +24,17 @@ Tick the `find` and `findone` for the relevant types and save.
 `yarn strapi install graphql` or just go to the marketplace within the admin ui and download it.
 You should then be able to test the queries in the GraphQL Playground at `http://localhost:1337/graphql`
 
-## Custom plugin - rich text editor example
+## Custom plugin - rich text editor replace draftjs with CKEditor
 
 [https://strapi.io/documentation/developer-docs/latest/guides/registering-a-field-in-admin.html#setup](https://strapi.io/documentation/developer-docs/latest/guides/registering-a-field-in-admin.html#setup)
+
+## Custom plugin - colorpicker
+
+[https://github.com/paulgaumer/Strapi_ColorPicker_Plugin](https://github.com/paulgaumer/Strapi_ColorPicker_Plugin)
+
+## Custom plugin - custom dropdown with react-select
+
+Custom
 
 ## Preview
 
