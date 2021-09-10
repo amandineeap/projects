@@ -35,7 +35,8 @@
       "columnType": "text"
     },
     "customDropdown": {
-      "type": "customDropdown"
+      "type": "customDropdown",
+      "columnType": "text"
     }
   }
 }
