@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { ChromePicker } from 'react-color';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import { ChromePicker } from "react-color";
+import styled from "styled-components";
 
 const Title = styled.h5`
   margin-bottom: 1rem;
@@ -12,7 +12,7 @@ const ColorWindow = styled.div`
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  border: ${(props) => props.color === '#FFFFFF' && '1px solid #5B5F65'};
+  border: ${(props) => props.color === "#FFFFFF" && "1px solid #5B5F65"};
 `;
 
 const PopOver = styled.div`
@@ -30,14 +30,14 @@ const Cover = styled.div`
 
 const ColorPicker = (props) => {
   const [showPicker, setShowPicker] = useState(false);
-  const [color, setColor] = useState(props.value ? props.value : '#FFFFFF');
+  const [color, setColor] = useState();
 
   /**
    * Makes the color value available to the document for database update
    * @param {string} colorValue - in hex format
    */
   const updateColorValue = (colorValue) => {
-    props.onChange({ target: { name: 'color', value: colorValue } });
+    props.onChange({ target: { name: "color", value: colorValue } });
   };
 
   /**
@@ -48,6 +48,17 @@ const ColorPicker = (props) => {
       updateColorValue(color);
     }
   }, []);
+
+  /**
+   * Get the saved color from db if exists
+   */
+  useEffect(() => {
+    if (props.value) {
+      setColor(props.value);
+    } else {
+      setColor("#FFFFFF");
+    }
+  }, [props]);
 
   /**
    * Handle color change from the the color picker
