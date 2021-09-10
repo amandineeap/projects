@@ -5,7 +5,8 @@
       <div v-for="zone in contents.pageZone" :key="zone.id" class="project">
         <!-- Display all richText here -->
         <div class="text-block sub-text" v-if="zone.__typename === 'ComponentPageComponentsTextBlock'">
-          <p>{{ zone.textBlock }}</p>
+          <div v-html="zone.textBlock">
+          </div>
         </div>
 
         <!-- Displays all Quotes here -->

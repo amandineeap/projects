@@ -27,3 +27,15 @@ You should then be able to test the queries in the GraphQL Playground at `http:/
 ## Custom plugin - rich text editor example
 
 [https://strapi.io/documentation/developer-docs/latest/guides/registering-a-field-in-admin.html#setup](https://strapi.io/documentation/developer-docs/latest/guides/registering-a-field-in-admin.html#setup)
+
+## Preview
+
+TODO - [https://strapi.io/blog/implement-previews-with-next-applications-using-a-strapi-backend](https://strapi.io/blog/implement-previews-with-next-applications-using-a-strapi-backend)
+
+## Localisation
+
+TODO - [https://strapi.io/blog/multilingual-content-management-system](https://strapi.io/blog/multilingual-content-management-system)
+
+## Integrate Shopify
+
+TODO - [https://strapi.io/blog/integrate-shopify-into-your-strapi-website](https://strapi.io/blog/integrate-shopify-into-your-strapi-website)
