@@ -8,6 +8,8 @@ export const pagesQuery = gql`
       id
       title
       description
+      color
+      customDropdown
       pageZone {
         ... on ComponentPageComponentsSingleImage {
           id

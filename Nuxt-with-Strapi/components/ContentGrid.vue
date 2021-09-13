@@ -2,7 +2,15 @@
   <div class="hero">
     <div v-for="contents in content" :key="contents.id">
       <p>{{ contents.title }}</p>
+      <div>Color from custom color picker:
+        <p>{{ contents.color}}</p>
+      </div>
+      <div>Value from custom dropdown:
+        <p>{{ contents.customDropdown}}</p>
+      </div>
       <div v-for="zone in contents.pageZone" :key="zone.id" class="project">
+   
+
         <!-- Display all richText here -->
         <div class="text-block sub-text" v-if="zone.__typename === 'ComponentPageComponentsTextBlock'">
           <div v-html="zone.textBlock">
@@ -17,7 +25,7 @@
 
         <!-- Displays all Images -->
         <div class="images sub-text" v-if="zone.__typename === 'ComponentPageComponentsSingleImage'">
-          <img :src="zone.image.url" />
+         <p>Use another provider succh as AWS-S3 or Cloudinary to display {{ zone.image.url }}</p>
         </div>
       </div>
     </div>
