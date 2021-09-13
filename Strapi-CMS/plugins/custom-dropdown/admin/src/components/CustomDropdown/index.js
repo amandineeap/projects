@@ -4,10 +4,8 @@ import axios from "axios";
 import Select from "react-select";
 
 const CustomDropdown = (props) => {
-  console.log("props"), props;
-  const [selected, setSelected] = useState(
-    props.value ? JSON.parse(props.value) : null
-  );
+  console.log("props", props);
+  const [selected, setSelected] = useState();
 
   const handleChange = (newValue, actionMeta) => {
     console.group("Value Changed");
@@ -42,13 +40,25 @@ const CustomDropdown = (props) => {
     };
     test();
   }, []);
+
+  /**
+   * Get the saved value for dropdown from db if exists
+   */
+  useEffect(() => {
+    if (props.value) {
+      setSelected(JSON.parse(props.value));
+    } else {
+      setSelected();
+    }
+  }, [props]);
+
   return (
     <Select
       isClearable
       onChange={handleChange}
       onInputChange={handleInputChange}
-      options={opts}
       defaultValue={selected}
+      options={opts}
     />
   );
 };
