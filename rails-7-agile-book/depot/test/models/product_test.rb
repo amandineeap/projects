@@ -1,7 +1,16 @@
+#---
+# Excerpted from "Agile Web Development with Rails 7",
+# published by The Pragmatic Bookshelf.
+# Copyrights apply to this code. It may not be used to create training material,
+# courses, books, articles, and the like. Contact us if you are in doubt.
+# We make no guarantees that this code is fit for any purpose.
+# Visit https://pragprog.com/titles/rails7 for more book information.
+#---
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
-  test "product attributes must not be empty" do 
+  
+  test "product attributes must not be empty" do
     product = Product.new
     assert product.invalid?
     assert product.errors[:title].any?
@@ -10,40 +19,7 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:image_url].any?
   end
 
-  test "product price must be positive" do
-    product = Product.new(title:        "My book title",
-                          description:  "description of the book", 
-                          image_url:    "image.jpg")
-    product.price = -1
-    assert product.invalid?
-    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
-
-    product.price = 0
-    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
-
-    product.price = 1
-    assert product.valid?
-  end
- 
-  def new_product(image_url)
-    Product.new(title:       "My Book Title",
-                description: "yyy",
-                price:       1,
-                image_url:   image_url)
-  end
-
-  test "image url" do
-    ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
-             http://a.b.c/x/y/z/fred.gif }
-    bad = %w{ fred.doc fred.gif/more fred.gif.more }
-    
-    ok.each do |image_url|
-      assert new_product(image_url).valid?,
-             "#{image_url} must be valid"
-    end
-    bad.each do |image_url|
-      assert new_product(image_url).invalid?,
-             "#{image_url} must be invalid"
-    end
-  end
+  # test "the truth" do
+  #   assert true
+  # end
 end

@@ -4,6 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# START:files
 # Ignore bundler config.
 /.bundle
 
@@ -36,3 +37,4 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+# END:files
