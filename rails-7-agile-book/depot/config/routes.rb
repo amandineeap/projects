@@ -7,6 +7,7 @@
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
 Rails.application.routes.draw do
+  resources :orders
   resources :line_items
   resources :carts
   root 'store#index', as: 'store/index'
