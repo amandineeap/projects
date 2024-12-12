@@ -29,13 +29,16 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        Cart.destroy[session[:cart_id]]
+        Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to store_index_url, notice: "Thank you for your order." }
-        format.json { render :show, status: :created, location: @order }
+        format.html { redirect_to store_index_url, notice: 
+          'Thank you for your order.' }
+        format.json { render :show, status: :created,
+          location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        format.json { render json: @order.errors,
+          status: :unprocessable_entity }
       end
     end
   end
