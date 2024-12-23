@@ -15,4 +15,5 @@ Rails.application.initialize!
 Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.perform_deliveries = false
 end
