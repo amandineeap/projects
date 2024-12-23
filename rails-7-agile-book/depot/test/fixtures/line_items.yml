@@ -8,5 +8,5 @@ one:
 
 two:
   product: two
-  cart: two
   price: 9.99
+  order: one
