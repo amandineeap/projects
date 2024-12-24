@@ -67,6 +67,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  def shipped 
+    OrderMailer.shipped(self).deliver_later
+    # redirect_to store_index_url, notice: "Order ##{@order.id} was shipped!"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
