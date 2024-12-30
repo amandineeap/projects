@@ -19,6 +19,8 @@ class Product < ApplicationRecord
   }
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
 
+  has_rich_text :description
+  
   private
   def ensure_not_referenced_by_any_line_item
     unless line_items.empty?
