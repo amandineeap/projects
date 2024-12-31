@@ -26,5 +26,9 @@ module Depot
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # 
+    
+    # Autoload all lib paths
+    # config.autoload_paths += %W(#{Rails.root}/lib)
   end
 end
